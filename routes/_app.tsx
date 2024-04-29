@@ -24,6 +24,22 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Web Manifest */}
         <link rel="manifest" href={asset("/site.webmanifest")} />
+
+        {/* Custom Fonts */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+            @font-face {
+              font-family: "Century Gothic";
+              src: url(${asset("/fonts/GOTHIC.TTF")}) format("ttf"), url(${
+              asset("/fonts/GOTHICB.TTF")
+            }) format("ttf"), 
+              url(${asset("/fonts/GOTHICBI.TTF")}) format("ttf"),
+              url(${asset("/fonts/GOTHICI.TTF")}) format("ttf");
+            }
+          `,
+          }}
+        />
       </Head>
 
       {/* Rest of Preact tree */}
