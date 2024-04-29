@@ -17,7 +17,7 @@ export default {
         },
       },
       fontFamily: {
-        Ghotic: "Ghotic",
+        centuryGothic: "Century Gothic",
       },
     },
   },
