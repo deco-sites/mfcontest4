@@ -435,4 +435,9 @@
 	<symbol fill="none" viewBox="0 0 15 9" id="ChevronDown2" xmlns="http://www.w3.org/2000/svg">
 		<path d="m1.014 1 6.188 5.999 6.188-6" stroke="currentColor" stroke-width="2"/>
 	</symbol>
+	<symbol viewBox="0 0 24 24" fill="none" id="Send" xmlns="http://www.w3.org/2000/svg">
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M3.49 7.07c-.854-2.134 1.382-4.193 3.439-3.165l11.717 5.859c1.842.921 1.842 3.55 0 4.472L6.929 20.095c-2.057 1.028-4.293-1.03-3.44-3.165L5.461 12 3.49 7.07ZM6.48 4.8c-1.233-.617-2.575.618-2.063 1.899l2.046 5.115a.5.5 0 0 1 0 .372l-2.046 5.116c-.512 1.28.83 2.515 2.063 1.898L18.2 13.342c1.105-.553 1.105-2.13 0-2.684L6.48 4.8Z" fill="currentColor" />
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 11.5H10v1H5.5v-1Z" fill="currentColor"/>
+		<text y="39" fill="currentColor" font-size="5" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Reza Nur</text>
+	</symbol>
 </svg>

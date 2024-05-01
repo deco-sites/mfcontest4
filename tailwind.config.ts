@@ -20,5 +20,11 @@ export default {
         centuryGothic: "Century Gothic",
       },
     },
+    colors: {
+      custom: {
+        "primary": "#1D1D1D",
+        "primary-inverted": "#fff",
+      },
+    },
   },
 };
