@@ -69,6 +69,37 @@
       ]
     }
   },
+  "Main": {
+    "__resolveType": "site/sections/Theme/Theme.tsx",
+    "buttonStyle": {
+      "--border-btn": "1px",
+      "--rounded-btn": "0.2rem",
+      "--btn-focus-scale": "0.95",
+      "--animation-btn": "0.25s"
+    },
+    "colorScheme": "any",
+    "otherStyles": {
+      "--rounded-box": "1rem",
+      "--rounded-badge": "1.9rem",
+      "--animation-input": "0.2s",
+      "--tab-border": "1px",
+      "--tab-radius": "0.5rem"
+    },
+    "mainColors": {
+      "base-100": "#ffffff",
+      "primary": "#1d1d1d",
+      "secondary": "#c7c7c7",
+      "tertiary": "#1D1D1D",
+      "neutral": "#333333",
+      "success": "#008060",
+      "warning": "#ffc453",
+      "error": "#d82c0d",
+      "info": "#2e72d2"
+    },
+    "font": {
+      "__resolveType": "website/loaders/fonts/local.ts"
+    }
+  },
   "Mobile": {
     "__resolveType": "website/matchers/device.ts",
     "mobile": true
@@ -351,37 +382,6 @@
     "firstByteThresholdMS": false,
     "theme": {
       "__resolveType": "Main"
-    }
-  },
-  "Main": {
-    "__resolveType": "site/sections/Theme/Theme.tsx",
-    "buttonStyle": {
-      "--border-btn": "1px",
-      "--rounded-btn": "0.2rem",
-      "--btn-focus-scale": "0.95",
-      "--animation-btn": "0.25s"
-    },
-    "colorScheme": "any",
-    "otherStyles": {
-      "--rounded-box": "1rem",
-      "--rounded-badge": "1.9rem",
-      "--animation-input": "0.2s",
-      "--tab-border": "1px",
-      "--tab-radius": "0.5rem"
-    },
-    "mainColors": {
-      "base-100": "#ffffff",
-      "primary": "#1d1d1d",
-      "secondary": "#c7c7c7",
-      "tertiary": "#404040",
-      "neutral": "#333333",
-      "success": "#008060",
-      "warning": "#ffc453",
-      "error": "#d82c0d",
-      "info": "#2e72d2"
-    },
-    "font": {
-      "__resolveType": "website/loaders/fonts/local.ts"
     }
   }
 }
