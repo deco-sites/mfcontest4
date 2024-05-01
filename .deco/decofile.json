@@ -311,6 +311,9 @@
         ]
       },
       {
+        "__resolveType": "site/sections/Contact/Contact.tsx"
+      },
+      {
         "__resolveType": "Footer"
       }
     ],
