@@ -60,8 +60,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    /*  */
-      
     width: max-content;
     flex-wrap: nowrap;
     animation: scroll var(--_animation-duration, 40s)
@@ -87,6 +85,54 @@
   @keyframes scroll {
     to {
       transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+
+  .vertical-scroller {
+    flex: 1;  
+    height: 100%;
+    gap: 24px;  
+    overflow: hidden;
+    -webkit-mask: linear-gradient(
+      0deg,
+      transparent,
+      white 20%,
+      white 80%,
+      transparent
+    );
+    mask: linear-gradient(0deg, transparent, white 20%, white 80%, transparent);
+  }
+
+  .vertical-scroller__inner {
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    flex-direction: column;
+    height: max-content;
+    animation: verticalScroll var(--_animation-duration, 30s)
+      var(--_animation-direction, forwards) linear infinite;
+  }
+
+  .vertical-scroller[data-direction="down"] {
+    --_animation-direction: reverse;
+  }
+  
+  .vertical-scroller[data-direction="up"] {
+    --_animation-direction: forwards;
+  }
+  
+  .vertical-scroller[data-speed="fast"] {
+    --_animation-duration: 20s;
+  }
+  
+  .vertical-scroller[data-speed="slow"] {
+    --_animation-duration: 60s;
+  }
+
+  @keyframes verticalScroll {
+    to {
+      transform: translateY(calc(-50% - 0.5rem));
     }
   }
 }
