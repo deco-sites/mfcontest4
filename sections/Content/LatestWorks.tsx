@@ -134,7 +134,7 @@ export default function LatestWorks({
     },
   ],
 }: Props) {
-  console.log("🔥 categories", categoryOptions);
+  // console.log("🔥 categories", categoryOptions);
 
   return (
     <section class="container p-3 sm:px-5 xl:p-0">
@@ -156,7 +156,7 @@ export default function LatestWorks({
             ))}
           </div>
         </div>
-        <div class="columns-2 md:columns-3">
+        <div class="columns-2 md:columns-3 scroll-timeline__image-opacity">
           {images.map(({ desktop, mobile, title, type }) => {
             const imageSizeDesktop = {
               landscape: {
@@ -184,7 +184,7 @@ export default function LatestWorks({
             const currentImageSizeMobile = imageSizeMobile[type ?? "portrait"];
 
             return (
-              <div class="rounded-lg mb-4 overflow-hidden">
+              <div class="rounded-lg mb-4 overflow-hidden image-scroll-animation">
                 <figure class="relative">
                   <Picture>
                     <Source
@@ -215,7 +215,8 @@ export default function LatestWorks({
           })}
         </div>
         {
-          /* <div class="columns-2 md:columns-3">
+          /*
+        <div class="columns-2 md:columns-3 scroll-timeline__image-opacity">
           <img class="mb-4" src="https://source.unsplash.com/random/1" />
           <img class="mb-4" src="https://source.unsplash.com/random/2" />
           <img class="mb-4" src="https://source.unsplash.com/random/3" />
