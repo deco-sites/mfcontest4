@@ -324,10 +324,24 @@
     "path": "/",
     "sections": [
       {
-        "__resolveType": "Header"
-      },
-      {
-        "__resolveType": "site/sections/Content/Hero.tsx"
+        "__resolveType": "site/sections/Content/Hero.tsx",
+        "images": [
+          {
+            "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/8352/26f84b6f-69e7-4d6b-aa8f-7d080a535f32",
+            "title": "Friends"
+          },
+          {
+            "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/8352/06696f5b-f5ca-4de2-a076-13928b9595e0",
+            "title": "Nature Travel"
+          },
+          {
+            "title": "Me ",
+            "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/8352/b7dc01e4-b49e-4f29-abf4-b1e1c69ec76b"
+          }
+        ],
+        "header": {
+          "__resolveType": "Header"
+        }
       },
       {
         "__resolveType": "site/sections/Content/LatestWorks.tsx",
