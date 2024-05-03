@@ -1,1 +1,1 @@
-{"__resolveType":"site/sections/Header.tsx","navigation":{"links":[{"label":"Home","url":"#home"},{"label":"Latest Works","url":"#latest-works"},{"label":"Contact","url":"#contact"}],"buttons":[{"id":"teste","text":"teste","href":"teste"}]},"logo":{"icon":"ArrowLeft"}}
+{"__resolveType":"site/sections/Header.tsx","navigation":{"links":[{"label":"Home","url":"#home"},{"label":"Latest Works","url":"#latest-works"},{"label":"Contact","url":"#contact"}]},"logo":{"icon":"Logo","title":"Photographer"}}

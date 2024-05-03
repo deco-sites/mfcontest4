@@ -67,17 +67,11 @@
           "label": "Contact",
           "url": "#contact"
         }
-      ],
-      "buttons": [
-        {
-          "id": "teste",
-          "text": "teste",
-          "href": "teste"
-        }
       ]
     },
     "logo": {
-      "icon": "ArrowLeft"
+      "icon": "Logo",
+      "title": "Photographer"
     }
   },
   "Main": {
