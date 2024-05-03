@@ -129,7 +129,7 @@ export interface Props {
   complementaryColors?: ComplementaryColors;
   buttonStyle?: Button;
   otherStyles?: Miscellaneous;
-  font?: Font;
+  // font?: Font;
   /**
    * @description This is the admin's color-scheme mode
    */
@@ -245,7 +245,7 @@ function Section({
   complementaryColors,
   buttonStyle,
   otherStyles,
-  font,
+  // font,
   colorScheme,
 }: Props) {
   const theme = {
@@ -258,17 +258,17 @@ function Section({
 
   const variables = [
     ...toVariables(theme),
-    [
-      "--font-family",
-      font?.family ||
-      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
-    ],
+    // [
+    //   "--font-family",
+    //   font?.family ||
+    //   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
+    // ],
   ]
     .map(([name, value]) => ({ name, value }));
 
   return (
     <SiteTheme
-      fonts={font ? [font] : undefined}
+      // fonts={font ? [font] : undefined}
       variables={variables}
       colorScheme={colorScheme === "any" ? undefined : colorScheme}
     />
@@ -404,11 +404,11 @@ export function Preview(props: Props) {
           </PreviewContainer>
         </div>
       </div>
-      {props.font?.family && (
+      {/* {props.font?.family && (
         <div className="text-center py-2">
           Font: {props.font.family}
         </div>
-      )}
+      )} */}
     </>
   );
 }

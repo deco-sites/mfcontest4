@@ -1,5 +1,6 @@
 import { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
+import { Section } from "deco/blocks/section.ts";
 
 /**@title {{{title}}} */
 export interface Image {
@@ -8,6 +9,7 @@ export interface Image {
 }
 
 export interface Props {
+  header?: Section
   supTitle?: string;
   title?: string;
   images?: Image[];
@@ -15,6 +17,7 @@ export interface Props {
 }
 
 export default function Hero({
+  header,
   supTitle = "through the lens of photographer lorem ipsum",
   title = "Capturing the essence of life, one moment at a time.",
   images = [
@@ -32,16 +35,22 @@ export default function Hero({
     },
   ],
 }: Props) {
+  const Component = header?.Component
   return (
-    <section class="w-full bg-custom-primary min-h-screen min-h-dvh">
-      <div class="w-full h-full flex justify-stretch items-stretch">
+    <section class="w-full bg-custom-primary min-h-screen overflow-hidden flex justify-stretch items-stretch">
+      <div class="fixed top-0 left-0 w-full">
+        {Component && (
+          <Component {...header?.props} />
+        )}
+      </div>
+      <div class="w-full grid grid-cols-3 grid-rows-1 overflow-hidden">
         {images.map(({ src, title }) => (
           <Image
             src={src || ""}
             alt={title || ""}
             width={819}
             height={1196}
-            class="w-full object-cover"
+            class="w-full object-cover max-h-full"
             loading="eager"
             fetchPriority="high"
           />
