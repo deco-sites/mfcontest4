@@ -60,7 +60,7 @@ export default function Header({
         </a>
 
         <div class="hidden items-center justify-center lg:flex w-full lg:col-span-3">
-          <ul class="flex">
+          <ul class="flex gap-16">
             {navigation.links.map((link) => (
               <li>
                 <a
