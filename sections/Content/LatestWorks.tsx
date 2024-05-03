@@ -137,7 +137,7 @@ export default function LatestWorks({
   // console.log("🔥 categories", categoryOptions);
 
   return (
-    <section class="container p-3 sm:px-5 xl:p-0">
+    <section class="container p-3 sm:px-5 xl:px-0 lg:py-11 xl:py-11">
       <article class="w-full flex flex-col gap-7">
         <div class="flex flex-col gap-5 lg:flex-row items-stretch justify-between">
           <div class="flex flex-col gap-1 flex-1">

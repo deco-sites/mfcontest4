@@ -192,7 +192,7 @@ export default function Contact({
               <div class="flex gap-3 w-full justify-start">
                 {socialLinks.map(({ text, url }) => (
                   <a
-                    class="text-xs text-custom-primary-inverted lg:text-base"
+                    class="text-xs text-custom-primary-inverted lg:text-base font-centuryGothic"
                     target="__blank"
                     href={url}
                   >
