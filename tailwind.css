@@ -140,7 +140,8 @@
     opacity: 0;
     animation: fade-in linear forwards;
     animation-timeline: view();
-    animation-range-end: cover 60vh;
+    /* animation-range-end: cover 60vh; */
+    animation-range: entry 20% cover 40%;
   }
 
   @keyframes fade-in {

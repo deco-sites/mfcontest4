@@ -88,20 +88,23 @@ export default function Hero({
   return (
     <section
       id={sectionId}
-      class="w-full bg-custom-primary min-h-screen overflow-hidden flex justify-stretch items-stretch relative"
+      class="w-full bg-custom-primary min-h-[60vh] lg:min-h-screen overflow-hidden flex justify-stretch items-stretch relative"
     >
-      <div class="absolute top-0 left-0 w-full z-50">
+      <div class="absolute top-0 left-0 w-full  z-[60]">
         {Component && <Component {...header?.props} />}
       </div>
-      <div class="absolute top-[85px] left-0 w-full z-50 flex items-center justify-center">
+      <div class="absolute top-0 h-full lg:h-max  lg:top-[85px] left-0 w-full z-50 flex items-center justify-center flex-col gap-4 lg:gap-0">
         <h2 class="text-pretty font-centuryGothic text-base max-w-5xl text-center font-extrabold leading-normal uppercase z-50 tracking-[10px] text-custom-secondary">
           {supTitle}
         </h2>
+        <h1 class="text-pretty font-centuryGothic text-4xl max-w-72 p-1 highlight-text text-center font-extrabold leading-normal uppercase z-10 lg:hidden">
+          {title}
+        </h1>
       </div>
       <div class="relative flex justify-stretch items-stretch">
         <div
-          class="w-full grid grid-cols-3 grid-rows-1 overflow-hidden relative opacity-0"
-          style={{ "clip-path": "inset(0 33.333% 0 33.333%)" }}
+          class="w-full grid grid-cols-3 grid-rows-1 overflow-hidden relative lg:opacity-0"
+          // style={{ "clip-path": "inset(0 33.333% 0 33.333%)" }}
         >
           {images.map(({ src, title }) => (
             <Image
@@ -115,8 +118,9 @@ export default function Hero({
             />
           ))}
         </div>
+        {/* FOR DESKTOP */}
         <div
-          class="absolute top-0 left-0 w-full h-full flex items-stretch z-30 stack-clip-image-text"
+          class="hidden lg:flex absolute top-0 left-0 w-full h-full items-stretch z-30 stack-clip-image-text"
           style={{ "clip-path": "inset(0 var(--clip-l) 0 var(--clip-r))" }}
         >
           <div class="flex w-full items-center justify-center relative">
@@ -138,7 +142,8 @@ export default function Hero({
             </div>
           </div>
         </div>
-        <div class="absolute top-0 left-0 w-full h-full flex items-stretch z-20">
+        {/* FOR DESKTOP */}
+        <div class="hidden lg:flex absolute top-0 left-0 w-full h-full items-stretch z-20">
           <div class="flex w-full items-center justify-center">
             <h1 class="text-pretty font-centuryGothic text-8xl max-w-5xl text-center font-extrabold leading-normal uppercase text-custom-secondary">
               {title}
@@ -147,7 +152,7 @@ export default function Hero({
         </div>
       </div>
       <div
-        class="absolute w-8 h-8 z-50 rounded-full bottom-24 right-16 group hover:scale-[3.5] transition-all duration-500 ease-linear cursor-pointer"
+        class="hidden lg:block absolute w-8 h-8 z-50 rounded-full bottom-24 right-16 group hover:scale-[3.5] transition-all duration-500 ease-linear cursor-pointer"
         data-trigger-mouseMove
       >
         <div class="w-8 h-8 flex items-center justify-center">

@@ -106,7 +106,7 @@ export default function Header({
       </div>
 
       {/* sidebar */}
-      <aside class="drawer-side z-50 overflow-hidden">
+      <aside class="drawer-side z-[60] overflow-hidden">
         {/* Close when clicking on overlay */}
         <label
           htmlFor="mobile-drawer-nav"
@@ -114,19 +114,20 @@ export default function Header({
           class="drawer-overlay"
         />
 
-        <div class="flex flex-col gap-8 min-h-full w-80 bg-base-100 text-base-content">
-          <a class="p-4" href="/">
+        <div class="flex flex-col gap-8 min-h-full w-80 bg-custom-primary text-base-content border-l border-custom-secondary px-2">
+          <a  href="/"   class="flex gap-2 items-center justify-start font-centuryGothic tracking-widest text-custom-secondary text-lg mt-8">
             <Icon
               id={logo.icon ?? "Logo"}
               size={32}
               class="text-custom-secondary"
             />
+            {logo.title}
           </a>
 
           <ul class="menu">
             {navigation?.links.map((link) => (
               <li>
-                <a href={link.url} aria-label={link.label}>
+                <a href={link.url} aria-label={link.label} class="font-centuryGothic text-custom-secondary border-b border-b-custom-secondary text-sm">
                   {link.label}
                 </a>
               </li>

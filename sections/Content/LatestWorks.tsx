@@ -161,7 +161,7 @@ export default function LatestWorks({
   return (
     <section
       id={sectionId}
-      class="container p-3 sm:px-5 xl:px-0 lg:py-11 xl:py-11"
+      class="container px-3 py-8 sm:px-5 xl:px-0 lg:py-11 xl:py-11"
     >
       <article class="w-full flex flex-col gap-7">
         <div class="flex flex-col gap-5 lg:flex-row items-stretch justify-between">
