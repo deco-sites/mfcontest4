@@ -24,6 +24,7 @@ export default {
       custom: {
         "primary": "#1D1D1D",
         "primary-inverted": "#fff",
+        "secondary": "#e8e8e8",
       },
     },
   },

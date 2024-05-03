@@ -148,6 +148,12 @@
       opacity: 1;
     }
   }
+
+  .highlight-text {
+    color: transparent !important;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--color-secondary, #e8e8e8);
+  }
 }
 
 @layer utilities {
