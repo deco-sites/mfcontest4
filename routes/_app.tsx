@@ -34,14 +34,14 @@ export default defineApp(async (_req, ctx) => {
               font-display: swap;
               font-style: normal;
               font-weight: 400;
-              src: url(${asset("/fonts/GOTHIC.TTF")}) format("ttf");
+              src: url(${asset("/fonts/GOTHIC.TTF")}) format("truetype");
             }
             @font-face {
               font-family: "Century Gothic";
               font-style: normal;
               font-weight: 600;
               font-display: swap;
-              src: url(${asset("/fonts/GOTHICB.TTF")}) format("ttf");
+              src: url(${asset("/fonts/GOTHICB.TTF")}) format("truetype");
             }
           `,
           }}
