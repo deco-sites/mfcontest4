@@ -31,11 +31,17 @@ export default defineApp(async (_req, ctx) => {
             __html: `
             @font-face {
               font-family: "Century Gothic";
-              src: url(${asset("/fonts/GOTHIC.TTF")}) format("ttf"), url(${
-              asset("/fonts/GOTHICB.TTF")
-            }) format("ttf"), 
-              url(${asset("/fonts/GOTHICBI.TTF")}) format("ttf"),
-              url(${asset("/fonts/GOTHICI.TTF")}) format("ttf");
+              font-display: swap;
+              font-style: normal;
+              font-weight: 400;
+              src: url(${asset("/fonts/GOTHIC.TTF")}) format("ttf");
+            }
+            @font-face {
+              font-family: "Century Gothic";
+              font-style: normal;
+              font-weight: 600;
+              font-display: swap;
+              src: url(${asset("/fonts/GOTHICB.TTF")}) format("ttf");
             }
           `,
           }}
