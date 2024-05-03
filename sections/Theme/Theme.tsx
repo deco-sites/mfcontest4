@@ -404,11 +404,13 @@ export function Preview(props: Props) {
           </PreviewContainer>
         </div>
       </div>
-      {/* {props.font?.family && (
+      {
+        /* {props.font?.family && (
         <div className="text-center py-2">
           Font: {props.font.family}
         </div>
-      )} */}
+      )} */
+      }
     </>
   );
 }

@@ -151,8 +151,13 @@
 
   .highlight-text {
     color: transparent !important;
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--color-secondary, #e8e8e8);
+  }
+
+  .stack-clip-image-text {
+    --clip-l: 33.333%;
+    --clip-r: 33.333%;
   }
 }
 
@@ -166,5 +171,12 @@
 
   .scrollbar-none::-webkit-scrollbar {
     display: none;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animation-duration-2000 {
+    animation-duration: 2s;
   }
 }
