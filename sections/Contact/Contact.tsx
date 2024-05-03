@@ -16,6 +16,7 @@ export interface SocialLink {
 }
 
 export interface Props {
+  sectionId?: string;
   title?: string;
   subtitle?: string;
   /**@title Imagens em linha (mobile) */
@@ -36,6 +37,7 @@ const IMG_PLACEHODLER = Array(8).fill(0).map((_, index) => ({
 }));
 
 export default function Contact({
+  sectionId = "contact",
   title = "Contact me",
   subtitle = "Enter your information to send a message",
   rowImages = IMG_PLACEHODLER,
@@ -144,7 +146,7 @@ export default function Contact({
   };
 
   return (
-    <section class=" bg-custom-primary w-full">
+    <section id={sectionId} class=" bg-custom-primary w-full">
       <div class="container p-3 sm:px-5 xl:p-0 overflow-hidden lg:!max-w-full">
         <article class="flex flex-col lg:flex-row gap-8">
           {isMobile && (

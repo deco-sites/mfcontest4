@@ -1,5 +1,7 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
+import type { SectionProps } from "deco/types.ts";
+import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 
 /**@title {{{name}}} */
 export interface Categorie {
@@ -7,25 +9,30 @@ export interface Categorie {
   value: string;
 }
 
+/**@title {{{title}}} */
+export interface Image {
+  desktop?: ImageWidget;
+  mobile?: ImageWidget;
+  title?: string;
+  /**
+  * @format dynamic-options
+  //  * @options {{{categoryOptions}}}
+  * {{#beautifySchemaTitle}}{{{categoryOptions}}}{{/beautifySchemaTitle}}
+  */
+  category?: string; // Seria usado aqui, em uma interface separada para as images
+  type?: "landscape" | "portrait";
+}
+
 export interface Props {
+  sectionId?: string;
   title?: string;
   description?: string;
   categoryOptions?: string[]; // Base para o dynamic-options
-  images?: {
-    desktop?: ImageWidget;
-    mobile?: ImageWidget;
-    title?: string;
-    /**
-    * @format dynamic-options
-    //  * @options {{{categoryOptions}}}
-    * {{#beautifySchemaTitle}}{{{categoryOptions}}}{{/beautifySchemaTitle}}
-    */
-    category?: string; // Seria usado aqui, em uma interface separada para as images
-    type?: "landscape" | "portrait";
-  }[];
+  images?: Image[];
 }
 
 export default function LatestWorks({
+  sectionId = "latest-works",
   title = "Latest Works",
   description =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id lobortis nulla.",
@@ -52,11 +59,26 @@ export default function LatestWorks({
   //   },
   // ],
   categoryOptions = [
-    "All",
-    "Fashion",
-    "Landscape",
-    "Lifestyle",
-    "Portrait",
+    {
+      text: "All",
+      active: true,
+    },
+    {
+      text: "Fashion",
+      active: false,
+    },
+    {
+      text: "Landscape",
+      active: false,
+    },
+    {
+      text: "Lifestyle",
+      active: false,
+    },
+    {
+      text: "Portrait",
+      active: false,
+    },
   ],
   images = [
     {
@@ -133,11 +155,14 @@ export default function LatestWorks({
       type: "landscape",
     },
   ],
-}: Props) {
+}: SectionProps<ReturnType<typeof loader>>) {
   // console.log("🔥 categories", categoryOptions);
 
   return (
-    <section class="container p-3 sm:px-5 xl:px-0 lg:py-11 xl:py-11">
+    <section
+      id={sectionId}
+      class="container p-3 sm:px-5 xl:px-0 lg:py-11 xl:py-11"
+    >
       <article class="w-full flex flex-col gap-7">
         <div class="flex flex-col gap-5 lg:flex-row items-stretch justify-between">
           <div class="flex flex-col gap-1 flex-1">
@@ -149,10 +174,15 @@ export default function LatestWorks({
             </p>
           </div>
           <div class="flex gap-x-5 gap-y-2 lg:gap-5 justify-start lg:justify-end items-end flex-1 flex-wrap">
-            {categoryOptions.map((category) => (
-              <span class="text-xl font-centuryGothic">
-                {category}
-              </span>
+            {categoryOptions.map(({ text, active }) => (
+              <button
+                class={`text-xl font-centuryGothic pb-1 ${
+                  active ? "border-b border-custom-primary" : ""
+                }`}
+                {...usePartialSection({ href: `?filter=${text}` })}
+              >
+                {text}
+              </button>
             ))}
           </div>
         </div>
@@ -234,3 +264,34 @@ export default function LatestWorks({
     </section>
   );
 }
+
+export const loader = (
+  { categoryOptions, images, ...rest }: Props,
+  req: Request,
+) => {
+  const filterParamValue = new URL(req.url)?.searchParams?.get("filter");
+  const enableToFilter = filterParamValue &&
+    JSON.stringify(categoryOptions).includes(filterParamValue);
+
+  const currentImages = enableToFilter
+    ? images?.filter(({ category }) =>
+      category === filterParamValue || filterParamValue === "All"
+    )
+    : images;
+
+  const currentFilterBy = enableToFilter
+    ? categoryOptions?.map((category) => ({
+      text: category,
+      active: category === filterParamValue,
+    }))
+    : categoryOptions?.map((category) => ({
+      text: category,
+      active: category === "All",
+    }));
+
+  return {
+    images: currentImages,
+    categoryOptions: currentFilterBy,
+    ...rest,
+  };
+};
