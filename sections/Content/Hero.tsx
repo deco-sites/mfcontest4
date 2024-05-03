@@ -10,6 +10,7 @@ export interface Image {
 }
 
 export interface Props {
+  sectionId?: string;
   header: Section;
   supTitle?: string;
   title?: string;
@@ -64,6 +65,7 @@ const script = () => {
 };
 
 export default function Hero({
+  sectionId = "home",
   header,
   supTitle = "through the lens of photographer lorem ipsum",
   title = "Capturing the essence of life, one moment at a time.",
@@ -84,7 +86,10 @@ export default function Hero({
 }: Props) {
   const Component = header?.Component;
   return (
-    <section class="w-full bg-custom-primary min-h-screen overflow-hidden flex justify-stretch items-stretch relative">
+    <section
+      id={sectionId}
+      class="w-full bg-custom-primary min-h-screen overflow-hidden flex justify-stretch items-stretch relative"
+    >
       <div class="absolute top-0 left-0 w-full z-50">
         {Component && <Component {...header?.props} />}
       </div>

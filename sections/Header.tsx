@@ -1,6 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import Icon from "../components/ui/Icon.tsx";
+import Icon, { AvailableIcons } from "../components/ui/Icon.tsx";
 
 export interface CTA {
   id?: string;
@@ -11,23 +11,22 @@ export interface CTA {
 
 export interface Nav {
   logo?: {
-    src?: ImageWidget;
-    alt?: string;
+    icon?: AvailableIcons;
+    title?: string;
   };
   navigation?: {
     links: {
       label?: string;
       url?: string;
     }[];
-    buttons: CTA[];
+    // buttons: CTA[];
   };
 }
 
 export default function Header({
   logo = {
-    src:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/67120bcd-936a-4ea5-a760-02ed5c4a3d04",
-    alt: "Logo",
+    icon: "Logo",
+    title: "Photographer",
   },
   navigation = {
     links: [
@@ -36,10 +35,10 @@ export default function Header({
       { label: "Princing", url: "/" },
       { label: "Contact", url: "/" },
     ],
-    buttons: [
-      { id: "change-me-1", href: "/", text: "Change me", outline: false },
-      { id: "change-me-2", href: "/", text: "Change me", outline: true },
-    ],
+    // buttons: [
+    //   { id: "change-me-1", href: "/", text: "Change me", outline: false },
+    //   { id: "change-me-2", href: "/", text: "Change me", outline: true },
+    // ],
   },
 }: Nav) {
   return (
@@ -47,26 +46,35 @@ export default function Header({
       <input id="mobile-drawer-nav" type="checkbox" class="drawer-toggle" />
 
       {/* main content */}
-      <div class="drawer-content container lg:px-0 px-4 flex gap-8 items-center justify-between py-4">
-        <a href="/">
-          <Image src={logo.src || ""} width={100} height={28} alt={logo.alt} />
+      <div class="drawer-content container lg:px-0 px-4 flex gap-8 items-center justify-between py-4 lg:grid grid-cols-5 grid-rows-1">
+        <a
+          href="/"
+          class="flex gap-2 items-center justify-center font-centuryGothic tracking-widest text-custom-secondary text-lg"
+        >
+          <Icon
+            id={logo.icon ?? "Logo"}
+            size={32}
+            class="text-custom-secondary"
+          />
+          {logo.title}
         </a>
 
-        <div class="hidden items-center justify-between lg:flex w-full">
+        <div class="hidden items-center justify-center lg:flex w-full lg:col-span-3">
           <ul class="flex">
             {navigation.links.map((link) => (
               <li>
                 <a
                   href={link.url}
                   aria-label={link.label}
-                  class="link no-underline hover:underline p-4"
+                  class="link no-underline p-1 font-centuryGothic text-custom-secondary border-b border-b-custom-secondary text-sm"
                 >
                   {link.label}
                 </a>
               </li>
             ))}
           </ul>
-          <ul class="flex gap-3">
+          {
+            /* <ul class="flex gap-3">
             {navigation.buttons?.map((item) => (
               <a
                 key={item?.id}
@@ -80,14 +88,20 @@ export default function Header({
                 {item?.text}
               </a>
             ))}
-          </ul>
+          </ul> */
+          }
         </div>
 
         <label
           htmlFor="mobile-drawer-nav"
           class="flex lg:hidden btn btn-ghost drawer-button"
         >
-          <Icon id="Bars3" size={24} strokeWidth={0.1} />
+          <Icon
+            id="Bars3"
+            size={24}
+            strokeWidth={0.1}
+            class="text-custom-secondary"
+          />
         </label>
       </div>
 
@@ -102,11 +116,10 @@ export default function Header({
 
         <div class="flex flex-col gap-8 min-h-full w-80 bg-base-100 text-base-content">
           <a class="p-4" href="/">
-            <Image
-              src={logo.src || ""}
-              width={100}
-              height={28}
-              alt={logo.alt}
+            <Icon
+              id={logo.icon ?? "Logo"}
+              size={32}
+              class="text-custom-secondary"
             />
           </a>
 
@@ -120,7 +133,8 @@ export default function Header({
             ))}
           </ul>
 
-          <ul class="p-4 flex items-center gap-3">
+          {
+            /* <ul class="p-4 flex items-center gap-3">
             {navigation.buttons?.map((item) => (
               <a
                 key={item?.id}
@@ -134,7 +148,8 @@ export default function Header({
                 {item?.text}
               </a>
             ))}
-          </ul>
+          </ul> */
+          }
         </div>
       </aside>
     </nav>
