@@ -56,8 +56,16 @@
     "navigation": {
       "links": [
         {
-          "label": "Teste",
-          "url": "teste"
+          "label": "Home",
+          "url": "#home"
+        },
+        {
+          "label": "Latest Works",
+          "url": "#latest-works"
+        },
+        {
+          "label": "Contact",
+          "url": "#contact"
         }
       ],
       "buttons": [
@@ -67,6 +75,9 @@
           "href": "teste"
         }
       ]
+    },
+    "logo": {
+      "icon": "ArrowLeft"
     }
   },
   "Main": {
