@@ -134,7 +134,7 @@ export default function Hero({
                   alt={title || ""}
                   width={819}
                   height={1196}
-                  class="w-full object-cover max-h-full brightness-75"
+                  class="w-full object-cover max-h-full brightness-75 lg:h-full"
                   loading="eager"
                   fetchPriority="high"
                 />
